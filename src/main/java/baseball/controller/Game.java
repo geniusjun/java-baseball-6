@@ -17,7 +17,7 @@ public class Game {
         for(int i = 0; i < 3; i++) {
             computerInput += Randoms.pickNumberInRange(1,9);
         }
-        System.out.println(computerInput);
+        System.out.println("computerInput = " + computerInput);
         while (!isCorrect){
             System.out.print("숫자를 입력해주세요 : ");
             playerInput = Console.readLine();
@@ -40,18 +40,17 @@ public class Game {
     private void Check(){
         countStrike = 0;
         countBall = 0;
+        int cnt = 0;
         for(int i = 0; i < 3; i++){ // 볼 몇개 스트라이크 몇개 인지
-            for (int j = 0; j < 3; j++){
-                if(computerInput.charAt(i) == playerInput.charAt(j)){
-                    if(i == j) {
-                        countStrike++;
-                    }
-                    else{
-                        countBall++;
-                    }
+            for (int j = 0; j < 3; j++) {
+                if (computerInput.charAt(cnt) == playerInput.charAt(cnt)) {
+                    countStrike++;
+                } else if (computerInput.charAt(i) == playerInput.charAt(j)) {
+                    countBall++;
                     break;
                 }
             }
+            cnt++;
         }
 
         if(countStrike == 0 && countBall == 0){ // 하나도 안맞은 경우
@@ -76,6 +75,11 @@ public class Game {
     public void Validate(){
         if(playerInput.length() != 3){
             throw new IllegalArgumentException();
+        }
+        for(int i = 0; i < 3; i++){
+            if(playerInput.charAt(i) > 0 && playerInput.charAt(i) < 10){
+                throw new IllegalArgumentException();
+            }
         }
     }
 
