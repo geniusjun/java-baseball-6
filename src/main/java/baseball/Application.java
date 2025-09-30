@@ -1,18 +1,12 @@
 package baseball;
 
-
-import baseball.controller.GameController;
-import baseball.domain.Computer;
-import baseball.domain.Player;
+import baseball.config.BaseballConfig;
+import baseball.controller.BaseballController;
 
 public class Application {
     public static void main(String[] args) {
-        Computer computer = new Computer();
-        Player player = new Player();
 
-        GameController gameController = new GameController(computer, player);
-
-
+        BaseballController baseballController = BaseballConfig.getInstance().getBaseballController();
 
     }
 }

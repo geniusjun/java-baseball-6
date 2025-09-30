@@ -8,7 +8,6 @@ public class Computer {
 
     private int ball;
 
-
     public String getGoalNum() {
         return goalNum;
     }

@@ -1,21 +1,19 @@
 package baseball.service;
 
-import baseball.domain.Computer;
-import baseball.domain.Player;
+import baseball.Repository.ComputerRepository;
+import baseball.Repository.PlayerRepository;
+import baseball.config.BaseballConfig;
 import baseball.validation.BaseballValidate;
 import camp.nextstep.edu.missionutils.Randoms;
 
+
 public class ComputerService {
 
-    private final Computer computer;
-    private final Player player;
-    PlayerService playerService;
-    BaseballValidate baseballValidate = new BaseballValidate();
+    private final ComputerRepository computerRepository = BaseballConfig.getInstance().getComputerRepository();
+    private final PlayerRepository playerRepository = BaseballConfig.getInstance().getPlayerRepository();
 
-    public ComputerService(Computer computer, Player player) {
-        this.computer = computer;
-        this.player = player;
-    }
+    // 검증 로직 의존성을 여기다가 추가하는 게 맞을까? -> 이쁘진 않지만 서비스에서 추가하므로!
+    BaseballValidate baseballValidate = new BaseballValidate();
 
     public void start(){
         System.out.println("숫자를 입력해주세요 : ");

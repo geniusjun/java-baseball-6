@@ -1,16 +1,14 @@
 package baseball.service;
 
+import baseball.Repository.PlayerRepository;
+import baseball.config.BaseballConfig;
 import baseball.domain.Player;
-import baseball.validation.BaseballValidate;
 import camp.nextstep.edu.missionutils.Console;
 
 public class PlayerService {
 
-    private final Player player;
+    private final PlayerRepository playerRepository = BaseballConfig.getInstance().getPlayerRepository();
 
-    public PlayerService(Player player) {
-        this.player = player;
-    }
 
     public void playerInput(Player player){
         player.setInput(Console.readLine());
