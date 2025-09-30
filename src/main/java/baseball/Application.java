@@ -1,15 +1,17 @@
 package baseball;
 
 
-import baseball.controller.Game;
+import baseball.controller.GameController;
+import baseball.domain.Computer;
+import baseball.domain.Player;
 
 public class Application {
     public static void main(String[] args) {
-        Game game = new Game();
-        System.out.println("숫자 야구 게임을 시작합니다.");
-        if(game.play().equals("1")){
-         game.play();
-        }
+        Computer computer = new Computer();
+        Player player = new Player();
+
+        GameController gameController = new GameController(computer, player);
+
 
 
     }
