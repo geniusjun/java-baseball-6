@@ -40,17 +40,17 @@ public class Game {
     private void Check(){
         countStrike = 0;
         countBall = 0;
-        int cnt = 0;
         for(int i = 0; i < 3; i++){ // 볼 몇개 스트라이크 몇개 인지
+            if(playerInput.charAt(i) == computerInput.charAt(i)){ // 스트라이크인지 먼저 확인
+                countStrike++;
+                continue;
+            }
             for (int j = 0; j < 3; j++) {
-                if (computerInput.charAt(cnt) == playerInput.charAt(cnt)) {
-                    countStrike++;
-                } else if (computerInput.charAt(i) == playerInput.charAt(j)) {
+                if(playerInput.charAt(i) == computerInput.charAt(j)){ // 스트라이크면 위에서 걸러지고 볼 체크
                     countBall++;
                     break;
                 }
             }
-            cnt++;
         }
 
         if(countStrike == 0 && countBall == 0){ // 하나도 안맞은 경우
