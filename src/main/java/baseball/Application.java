@@ -8,5 +8,10 @@ public class Application {
 
         BaseballController baseballController = BaseballConfig.getInstance().getBaseballController();
 
+        baseballController.start();
+
+        baseballController.count();
+
+
     }
 }

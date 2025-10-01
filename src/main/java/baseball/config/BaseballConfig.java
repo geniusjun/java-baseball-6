@@ -14,9 +14,11 @@ public class BaseballConfig {
     // 싱글톤 DI컨테이너 따라하기
     private static final BaseballConfig instance = new BaseballConfig();
 
+    // 싱글톤이니 생성자 private
     private BaseballConfig(){
     };
 
+    // 이 매서드로만 접근!
     public static BaseballConfig getInstance(){
         return instance;
     }
@@ -37,6 +39,13 @@ public class BaseballConfig {
     private final static BaseballValidate baseballValidate = new BaseballValidate();
 
 
+    public Computer getComputer(){
+        return computer;
+    }
+
+    public Player getPlayer(){
+        return player;
+    }
 
     public BaseballController getBaseballController(){
         return baseballController;
