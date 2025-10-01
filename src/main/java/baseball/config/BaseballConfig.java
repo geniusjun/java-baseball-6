@@ -19,6 +19,8 @@ public class BaseballConfig {
         return instance;
     }
 
+    private BaseballConfig() {
+    }
 
     // 컨테이너가 싱글톤이면 그 안의 멤버변수들도 싱글톤이겠지? -> 추후에 지피티 검색해보기
     private final Computer computer = new Computer();
