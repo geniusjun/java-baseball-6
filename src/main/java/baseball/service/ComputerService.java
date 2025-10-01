@@ -38,11 +38,13 @@ public class ComputerService {
 
     public void computerInit(){
         computerRepository.getComputer().setGoalNum("");
-        for(int i = 0; i < 3; i++) {
-            computerRepository.getComputer()
-                                .setGoalNum(computerRepository.getComputer().getGoalNum()
-                                        + Randoms.pickNumberInRange(1,9));
+        while(computerRepository.getComputer().getGoalNum().length() < 3) {
+            char randomChar = (char) ('0' +Randoms.pickNumberInRange(1,9));
+            if(computerRepository.getComputer().getGoalNum().indexOf(randomChar) == -1)
+                computerRepository.getComputer().setGoalNum(computerRepository.getComputer().getGoalNum() + randomChar);
+
         }
+        System.out.println(computerRepository.getComputer().getGoalNum());
     }
 
     public void count(){
