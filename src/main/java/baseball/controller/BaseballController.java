@@ -8,6 +8,7 @@ public class BaseballController {
 
     public BaseballController(ComputerService computerService) {
         this.computerService = computerService;
+        System.out.println("숫자 야구 게임을 시작합니다.");
     }
 
     // 게임 시작 - 컴퓨터 숫자 초기화 및 사용자 입력 받기
