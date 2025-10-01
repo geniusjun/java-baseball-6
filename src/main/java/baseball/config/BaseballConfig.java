@@ -14,10 +14,6 @@ public class BaseballConfig {
     // 싱글톤 DI컨테이너 따라하기
     private static final BaseballConfig instance = new BaseballConfig();
 
-    // 싱글톤이니 생성자 private
-    private BaseballConfig(){
-    };
-
     // 이 매서드로만 접근!
     public static BaseballConfig getInstance(){
         return instance;
@@ -25,50 +21,22 @@ public class BaseballConfig {
 
 
     // 컨테이너가 싱글톤이면 그 안의 멤버변수들도 싱글톤이겠지? -> 추후에 지피티 검색해보기
-    private final static Computer computer = new Computer();
-    private final static Player player = new Player();
+    private final Computer computer = new Computer();
+    private final Player player = new Player();
 
-    private final static BaseballController baseballController = new BaseballController();
+    private final ComputerRepository computerRepository = new ComputerRepository(computer);
+    private final PlayerRepository playerRepository = new PlayerRepository(player);
 
-    private final static ComputerService computerService = new ComputerService();
-    private final static PlayerService playerService = new PlayerService();
+    private final BaseballValidate baseballValidate = new BaseballValidate();
 
-    private final static ComputerRepository computerRepository = new ComputerRepository();
-    private final static PlayerRepository playerRepository = new PlayerRepository();
+    private final PlayerService playerService = new PlayerService(playerRepository);
+    private final ComputerService computerService = new ComputerService(playerService, computerRepository, playerRepository, baseballValidate);
 
-    private final static BaseballValidate baseballValidate = new BaseballValidate();
+    private final BaseballController baseballController = new BaseballController(computerService);
 
-
-    public Computer getComputer(){
-        return computer;
-    }
-
-    public Player getPlayer(){
-        return player;
-    }
 
     public BaseballController getBaseballController(){
         return baseballController;
-    }
-
-    public ComputerService getComputerService(){
-        return computerService;
-    }
-
-    public PlayerService getPlayerService(){
-        return playerService;
-    }
-
-    public ComputerRepository getComputerRepository(){
-        return computerRepository;
-    }
-
-    public PlayerRepository getPlayerRepository(){
-        return playerRepository;
-    }
-
-    public BaseballValidate getBaseballValidate(){
-        return baseballValidate;
     }
 
 }

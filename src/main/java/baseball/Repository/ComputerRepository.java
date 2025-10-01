@@ -1,11 +1,14 @@
 package baseball.Repository;
 
-import baseball.config.BaseballConfig;
 import baseball.domain.Computer;
 
 public class ComputerRepository {
 
-    Computer computer = BaseballConfig.getInstance().getComputer();
+    private final Computer computer;
+
+    public ComputerRepository(Computer computer) {
+        this.computer = computer;
+    }
 
     public Computer getComputer(){
         return computer;

@@ -1,11 +1,14 @@
 package baseball.Repository;
 
-import baseball.config.BaseballConfig;
 import baseball.domain.Player;
 
 public class PlayerRepository {
 
-    Player player = BaseballConfig.getInstance().getPlayer();
+    private final Player player;
+
+    public PlayerRepository(Player player) {
+        this.player = player;
+    }
 
     public Player getPlayer(){
         return player;

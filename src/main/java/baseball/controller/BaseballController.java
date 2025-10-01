@@ -1,12 +1,14 @@
 package baseball.controller;
 
-import baseball.config.BaseballConfig;
 import baseball.service.ComputerService;
-import baseball.service.PlayerService;
 
 public class BaseballController {
 
-    private final ComputerService computerService = BaseballConfig.getInstance().getComputerService();
+    private final ComputerService computerService;
+
+    public BaseballController(ComputerService computerService) {
+        this.computerService = computerService;
+    }
 
     // 게임 시작 - 컴퓨터 숫자 초기화 및 사용자 입력 받기
     public void start(){

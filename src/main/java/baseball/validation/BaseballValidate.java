@@ -17,8 +17,9 @@ public class BaseballValidate {
         if(playerInput.equals("1")){
             return true;
         } else if (playerInput.equals("2")){
+            System.out.println("게임 종료");
             return false;
-        } else {
+        }else{
             throw new IllegalArgumentException();
         }
     }
