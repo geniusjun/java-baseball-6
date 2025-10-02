@@ -11,4 +11,6 @@ public class Player {
     public void setInput(String input) {
         this.input = input;
     }
+
+
 }

@@ -15,7 +15,7 @@ public class BaseballConfig {
     private static final BaseballConfig instance = new BaseballConfig();
 
     // 이 매서드로만 접근!
-    public static BaseballConfig getInstance(){
+    public static BaseballConfig getInstance() {
         return instance;
     }
 
@@ -26,18 +26,20 @@ public class BaseballConfig {
     private final Computer computer = new Computer();
     private final Player player = new Player();
 
+
     private final ComputerRepository computerRepository = new ComputerRepository(computer);
     private final PlayerRepository playerRepository = new PlayerRepository(player);
 
     private final BaseballValidate baseballValidate = new BaseballValidate();
 
     private final PlayerService playerService = new PlayerService(playerRepository);
-    private final ComputerService computerService = new ComputerService(playerService, computerRepository, playerRepository, baseballValidate);
+    private final ComputerService computerService = new ComputerService(playerService, computerRepository,
+            playerRepository, baseballValidate);
 
     private final BaseballController baseballController = new BaseballController(computerService);
 
 
-    public BaseballController getBaseballController(){
+    public BaseballController getBaseballController() {
         return baseballController;
     }
 

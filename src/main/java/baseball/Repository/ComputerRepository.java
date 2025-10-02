@@ -10,8 +10,9 @@ public class ComputerRepository {
         this.computer = computer;
     }
 
-    public Computer getComputer(){
+    public Computer getComputer() {
         return computer;
     }
+
 
 }

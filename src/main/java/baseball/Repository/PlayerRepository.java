@@ -10,8 +10,9 @@ public class PlayerRepository {
         this.player = player;
     }
 
-    public Player getPlayer(){
+    public Player getPlayer() {
         return player;
     }
+
 
 }

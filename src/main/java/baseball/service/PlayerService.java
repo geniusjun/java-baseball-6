@@ -12,8 +12,9 @@ public class PlayerService {
         this.playerRepository = playerRepository;
     }
 
-    public void playerInput(Player player){
+    public void playerInput(Player player) {
         player.setInput(Console.readLine());
     }
+
 
 }

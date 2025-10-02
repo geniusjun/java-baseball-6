@@ -32,11 +32,13 @@ public class Computer {
         this.ball = ball;
     }
 
-    public void setBallPlus(){
+    public void setBallPlus() {
         this.ball++;
     }
 
-    public void setStrikePlus(){
+    public void setStrikePlus() {
         this.strike++;
     }
+
+
 }
