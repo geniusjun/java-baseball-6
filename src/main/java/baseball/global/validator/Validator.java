@@ -1,6 +1,6 @@
-package baseball.validation;
+package baseball.global.validator;
 
-public class BaseballValidate {
+public class Validator {
 
     public void validateStartInput(String playerInput) {
         if (playerInput.length() != 3) {

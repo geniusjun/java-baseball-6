@@ -10,6 +10,5 @@ public class Application {
         baseballController.start();
 
         baseballController.count();
-
     }
 }

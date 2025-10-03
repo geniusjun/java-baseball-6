@@ -16,5 +16,4 @@ public class PlayerService {
         player.setInput(Console.readLine());
     }
 
-
 }

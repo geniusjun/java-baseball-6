@@ -2,7 +2,7 @@ package baseball.service;
 
 import baseball.Repository.ComputerRepository;
 import baseball.Repository.PlayerRepository;
-import baseball.validation.BaseballValidate;
+import baseball.global.validator.Validator;
 import camp.nextstep.edu.missionutils.Randoms;
 
 
@@ -11,10 +11,10 @@ public class ComputerService {
     private final PlayerService playerService;
     private final ComputerRepository computerRepository;
     private final PlayerRepository playerRepository;
-    private final BaseballValidate baseballValidate;
+    private final Validator baseballValidate;
 
     public ComputerService(PlayerService playerService, ComputerRepository computerRepository,
-                           PlayerRepository playerRepository, BaseballValidate baseballValidate) {
+                           PlayerRepository playerRepository, Validator baseballValidate) {
         this.playerService = playerService;
         this.computerRepository = computerRepository;
         this.playerRepository = playerRepository;
