@@ -6,6 +6,7 @@ public enum ErrorMessage {
     NOT_NUMBER_ERROR("숫자만을 입력해주세요"),
     INVALID_RANGE_ERROR("1~9까지의 숫자를 입력해주세요"),
     INVALID_LENGTH_ERROR("숫자를 다시 입력해주세요(3자리수)"),
+    INVALID_RESTART_ERROR("종료시에는 1 또는 2만 입력 가능합니다"),
     DUPLICATED_ERROR("서로 다른 3개의 숫자여야 합니다.");
 
 

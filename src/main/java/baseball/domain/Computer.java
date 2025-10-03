@@ -8,7 +8,7 @@ public class Computer {
 
     List<Integer> numbers;
 
-    public Computer(List<Integer> numbers) {
+    public Computer() {
         this.numbers = new ArrayList<>();
     }
 
@@ -30,7 +30,7 @@ public class Computer {
 
     private int isBallIndex(int i, Numbers givenNumbers) {
         for (int j = 0; j < givenNumbers.getSize(); j++) {
-            if ((i != j) && (numbers.get(i) == numbers.get(j))) {
+            if ((i != j) && (numbers.get(i) == givenNumbers.get(j))) {
                 return 1;
             }
         }

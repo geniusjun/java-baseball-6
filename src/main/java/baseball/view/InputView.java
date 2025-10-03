@@ -1,5 +1,6 @@
 package baseball.view;
 
+import baseball.domain.GameCommand;
 import baseball.view.ui.ConsoleReader;
 import baseball.view.ui.ConsoleWriter;
 import java.util.List;
@@ -9,6 +10,11 @@ public class InputView {
     public List<Integer> enterNumber() {
         ConsoleWriter.printMessage("숫자를 입력해주세요 : ");
         return Validator.validateNumber(ConsoleReader.reader());
+    }
+
+    public GameCommand enterRestartOrQuit() {
+        ConsoleWriter.printlnMessage("게임을 새로 시작하려면 1, 종료하려면 2를 입력하세요.");
+        return GameCommand.from(ConsoleReader.reader());
     }
 
     private static class Validator {

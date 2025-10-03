@@ -7,7 +7,7 @@ import camp.nextstep.edu.missionutils.Console;
 public final class ConsoleReader {
 
     public static String reader() {
-        return Console.readLine();
+        return Validator.validate(Console.readLine());
     }
 
     private static class Validator {
