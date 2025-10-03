@@ -4,13 +4,13 @@ import baseball.global.exception.CustomException;
 import baseball.global.exception.ErrorMessage;
 import camp.nextstep.edu.missionutils.Console;
 
-public final class Input {
+public final class ConsoleReader {
 
-    public static String Reader() {
+    public static String reader() {
         return Console.readLine();
     }
 
-    public static class Validator {
+    private static class Validator {
         public static String validate(String message) {
             ValidateInputBlank(message);
             return message;

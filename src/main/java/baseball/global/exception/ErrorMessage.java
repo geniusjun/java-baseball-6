@@ -2,7 +2,8 @@ package baseball.global.exception;
 
 public enum ErrorMessage {
 
-    BLANK_INPUT_ERROR("빈 문자열이 입력되었습니다.");
+    BLANK_INPUT_ERROR("빈 문자열이 입력되었습니다."),
+    NOT_NUMBER_ERROR("숫자만을 입력해주세요");
 
 
     private final String message;
