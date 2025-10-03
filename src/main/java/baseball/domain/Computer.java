@@ -1,44 +1,20 @@
 package baseball.domain;
 
+import baseball.global.util.RandomNumberGenerator;
+import java.util.ArrayList;
+import java.util.List;
+
 public class Computer {
 
-    private String goalNum;
+    List<Integer> numbers;
 
-    private int strike;
-
-    private int ball;
-
-    public String getGoalNum() {
-        return goalNum;
+    public Computer(List<Integer> numbers) {
+        this.numbers = new ArrayList<>();
     }
 
-    public void setGoalNum(String goalNum) {
-        this.goalNum = goalNum;
+    public void generate() {
+        numbers = RandomNumberGenerator.generateRandomNumber();
     }
 
-    public int getStrike() {
-        return strike;
-    }
-
-    public void setStrike(int strike) {
-        this.strike = strike;
-    }
-
-    public int getBall() {
-        return ball;
-    }
-
-    public void setBall(int ball) {
-        this.ball = ball;
-    }
-
-    public void setBallPlus() {
-        this.ball++;
-    }
-
-    public void setStrikePlus() {
-        this.strike++;
-    }
-
-
+    
 }

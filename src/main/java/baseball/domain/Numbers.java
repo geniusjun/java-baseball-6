@@ -24,7 +24,7 @@ public class Numbers {
     private static class Validator {
 
         public static List<Number> validate(List<Integer> numbers) {
-            validateLength(numbers);
+            validateDuplicated(numbers);
             validateLength(numbers);
             return numbers.stream()
                     .map(Number::new)
