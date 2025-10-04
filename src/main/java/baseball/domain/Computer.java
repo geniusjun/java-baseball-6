@@ -12,6 +12,11 @@ public class Computer {
         this.numbers = new ArrayList<>();
     }
 
+    // For Test
+    public void setNumbers(List<Integer> testNumbers) {
+        numbers = testNumbers;
+    }
+
     public void generate() {
         numbers = RandomNumberGenerator.generateRandomNumber();
     }

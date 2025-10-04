@@ -21,6 +21,10 @@ public class Numbers {
         return numbers.size();
     }
 
+    public static Numbers from(List<Integer> inputNumbers) {
+        return new Numbers(inputNumbers);
+    }
+
     private static class Validator {
 
         public static List<Number> validate(List<Integer> numbers) {
